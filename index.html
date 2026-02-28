@@ -1,41 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For You 💐</title>
+<title>For Saumya 🩷</title>
 
 <style>
 
 body {
   text-align: center;
   font-family: Arial;
-  background: #ffe6f2;
+  background: linear-gradient(#ffd6e7,#ffeef5);
+  overflow-x: hidden;
 }
 
 h1 {
-  color: #ff4d88;
+  color: #ff2e88;
 }
 
 .cat {
-  width: 200px;
+  width: 220px;
 }
 
 #flowers img {
-  width: 80px;
-  margin: 5px;
+  width: 70px;
+  margin: 3px;
 }
 
 button {
   padding: 12px 20px;
   font-size: 18px;
-  background: #ff66a3;
+  background: #ff4da6;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #ff3385;
+  background: #ff1a8c;
+}
+
+.heart, .sparkle {
+  position: fixed;
+  font-size: 20px;
+  animation: float 3s linear;
+}
+
+@keyframes float {
+  from { transform: translateY(0); opacity:1; }
+  to { transform: translateY(-200px); opacity:0; }
+}
+
+#counter {
+  margin-top: 10px;
+  color: #ff0066;
+}
+
+#final {
+  display: none;
+  font-size: 24px;
+  color: #ff0066;
+  margin-top: 20px;
 }
 
 </style>
@@ -44,7 +68,7 @@ button:hover {
 
 <body>
 
-<h1>For my best friend ❤️</h1>
+<h1>For Saumya, the cutest person ever 🌸🩷</h1>
 
 <img
 class="cat"
@@ -53,9 +77,18 @@ src="https://i.imgur.com/JIX9pXb.png"
 
 <div id="flowers"></div>
 
-<br>
+<button onclick="grow()">
+Grow bouquet 💐
+</button>
 
-<button onclick="grow()">Click to grow bouquet 💐</button>
+<div id="counter">
+Clicks: 0
+</div>
+
+<div id="final">
+You make everything better Saumya ❤️  
+This bouquet will never be as big as how amazing you are 💐✨
+</div>
 
 <script>
 
@@ -69,6 +102,61 @@ function grow() {
   '<img src="https://i.imgur.com/9yG3YQp.png">';
 
   document.getElementById("flowers").innerHTML += flower;
+
+  document.getElementById("counter").innerHTML =
+  "Clicks: " + count;
+
+  heart();
+  sparkle();
+
+  if(count == 12){
+    bigBouquet();
+  }
+
+}
+
+function heart(){
+
+  let h = document.createElement("div");
+
+  h.className = "heart";
+
+  h.innerHTML = "❤️";
+
+  h.style.left = Math.random()*90+"%";
+
+  h.style.top = "80%";
+
+  document.body.appendChild(h);
+
+  setTimeout(()=>{h.remove();},3000);
+
+}
+
+function sparkle(){
+
+  let s = document.createElement("div");
+
+  s.className = "sparkle";
+
+  s.innerHTML = "✨";
+
+  s.style.left = Math.random()*90+"%";
+
+  s.style.top = "80%";
+
+  document.body.appendChild(s);
+
+  setTimeout(()=>{s.remove();},3000);
+
+}
+
+function bigBouquet(){
+
+  document.getElementById("flowers").innerHTML =
+  "💐💐💐💐💐💐💐💐💐💐💐💐";
+
+  document.getElementById("final").style.display="block";
 
 }
 
