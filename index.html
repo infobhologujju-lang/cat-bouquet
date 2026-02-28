@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For You 💐</title>
+
+<style>
+body {
+  text-align: center;
+  font-family: Arial;
+  background: #ffeef5;
+}
+
+.cat {
+  font-size: 80px;
+}
+
+.bouquet {
+  font-size: 40px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>For my best friend ❤️</h1>
+
+<div class="cat">🐱</div>
+
+<div id="flowers" class="bouquet">💐</div>
+
+<button onclick="grow()">Click to grow bouquet</button>
+
+<script>
+
+let count = 1;
+
+function grow() {
+  count++;
+  let flowers = "💐".repeat(count);
+  document.getElementById("flowers").innerHTML = flowers;
+}
+
+</script>
+
+</body>
+</html>
