@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,12 +18,13 @@ h1 {
 }
 
 .cat {
-  width: 220px;
+  width: 250px;
+  margin-top: 10px;
 }
 
-#flowers img {
-  width: 70px;
-  margin: 3px;
+#flowers {
+  margin-top: 10px;
+  font-size: 30px;
 }
 
 button {
@@ -41,7 +43,7 @@ button:hover {
 
 .heart, .sparkle {
   position: fixed;
-  font-size: 20px;
+  font-size: 22px;
   animation: float 3s linear;
 }
 
@@ -70,12 +72,9 @@ button:hover {
 
 <h1>For Saumya, the cutest person ever 🌸🩷</h1>
 
-<img
-class="cat"
-src="https://i.imgur.com/JIX9pXb.png"
-/>
+<img class="cat" src="cat.png">
 
-<div id="flowers"></div>
+<div id="flowers">💐</div>
 
 <button onclick="grow()">
 Grow bouquet 💐
@@ -98,10 +97,7 @@ function grow() {
 
   count++;
 
-  let flower =
-  '<img src="https://i.imgur.com/9yG3YQp.png">';
-
-  document.getElementById("flowers").innerHTML += flower;
+  document.getElementById("flowers").innerHTML += "💐";
 
   document.getElementById("counter").innerHTML =
   "Clicks: " + count;
@@ -154,7 +150,7 @@ function sparkle(){
 function bigBouquet(){
 
   document.getElementById("flowers").innerHTML =
-  "💐💐💐💐💐💐💐💐💐💐💐💐";
+  "💐💐💐💐💐💐💐💐💐💐💐💐💐💐";
 
   document.getElementById("final").style.display="block";
 
