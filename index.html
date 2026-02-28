@@ -4,25 +4,40 @@
 <title>For You 💐</title>
 
 <style>
+
 body {
   text-align: center;
   font-family: Arial;
-  background: #ffeef5;
+  background: #ffe6f2;
+}
+
+h1 {
+  color: #ff4d88;
 }
 
 .cat {
-  font-size: 80px;
+  width: 200px;
 }
 
-.bouquet {
-  font-size: 40px;
+#flowers img {
+  width: 80px;
+  margin: 5px;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 18px;
-  margin-top: 20px;
+  background: #ff66a3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
+
+button:hover {
+  background: #ff3385;
+}
+
 </style>
 
 </head>
@@ -31,20 +46,30 @@ button {
 
 <h1>For my best friend ❤️</h1>
 
-<div class="cat">🐱</div>
+<img
+class="cat"
+src="https://i.imgur.com/JIX9pXb.png"
+/>
 
-<div id="flowers" class="bouquet">💐</div>
+<div id="flowers"></div>
 
-<button onclick="grow()">Click to grow bouquet</button>
+<br>
+
+<button onclick="grow()">Click to grow bouquet 💐</button>
 
 <script>
 
-let count = 1;
+let count = 0;
 
 function grow() {
+
   count++;
-  let flowers = "💐".repeat(count);
-  document.getElementById("flowers").innerHTML = flowers;
+
+  let flower =
+  '<img src="https://i.imgur.com/9yG3YQp.png">';
+
+  document.getElementById("flowers").innerHTML += flower;
+
 }
 
 </script>
